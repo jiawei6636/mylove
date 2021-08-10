@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" href="static/rookie.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="static/rookie.ico" type="image/x-icon" />
+    <script type="text/javascript" src="./static/jquery.min.js"></script>
+    <script type="text/javascript" src="./static/jscex.min.js"></script>
+    <script type="text/javascript" src="./static/jscex-parser.js"></script>
+    <script type="text/javascript" src="./static/jscex-jit.js"></script>
+    <script type="text/javascript" src="./static/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="./static/jscex-async.min.js"></script>
+    <script type="text/javascript" src="./static/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="./static/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./static/love.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="heart"></div>
+    <p>佳玮 <font style="font-style: italic;">LOVE</font> 卢琦</p>
+    <br><br>
+    <div id="clock-box" style="color: floralwhite; font-size: 15px;">
+        2021.5.3 日 晚上 8 点（第一次忍不住亲你）后的
+        <div id="clock" style="text-align: center;"></div>
+    </div>
+    <br>
+    <font style="color: white;">&copy; Jiawei Li &nbsp;|&nbsp; My heart beats for you every day.</font>
+</body>
+
+<script>
+    (function(){
+        var textAnimate = eval(Jscex.compile("async", function () {
+		    var together = new Date();
+		    together.setFullYear(2021,4,3); 			//时间年月日
+		    together.setHours(20);						//小时	
+		    together.setMinutes(0);					//分钟
+		    together.setSeconds(0);					//秒前一位
+		    together.setMilliseconds(0);				//秒第二位
+
+		    $("#code").show().typewriter();
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+
+        textAnimate().start();
+
+    })();
+</script>
+
+</html>
