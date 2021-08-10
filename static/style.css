@@ -25,6 +25,7 @@ html {
 body {
     width: 100vw;
     height: 100vh;
+    /* min-height: 70vw; */
     background-color: var(--background-color);
     display: flex;
     justify-content: center;
@@ -39,6 +40,7 @@ body {
     background-color: var(--color1);
     transform: rotate(45deg);
     animation: animate 1s ease-in-out infinite
+    /* 心跳 */
 }
 
 #heart::before, #heart::after {
