@@ -24,13 +24,21 @@
     <!-- <font style="color: white;font-size: 20px;">There is nothing!</font> -->
     
     <div id="heart"></div>
-    <p style="text-align: center;font-style: italic;">Life Just Wonderful!</p>
+    <p style="text-align: center;font-style: italic;">
+        <font style="color: greenyellow;">L</font>ife <font style="color: greenyellow;">J</font>ust <font style="color: greenyellow;">W</font>onderful!
+    </p>
     <br><br>
     <div id="clock-box" style="text-align: center; color: floralwhite; font-size: 15px;">
         我的家人（爸爸，妈妈，奶奶......），爱你们的
         <div id="clock" style="text-align: center;"></div>
         （自 1996 年 3 月 19 日 晚上 8 点 LJW 出生后）
     </div>
+    <!-- <br>
+    <div id="clock-box-new" style="text-align: center; color: floralwhite; font-size: 15px;">
+        我的爱人，爱你的
+        <div id="clock-new" style="text-align: center;"></div>
+        （自 2022 年 2 月 22 日 晚上 8 点 相遇后）
+    </div> -->
     <p style="text-align: center;font-style: italic; font-size: 20px; margin-top: 10px;">
         Life is beautiful because of love! Love my family, my friends, and all the people loving me!
     </p>
@@ -58,6 +66,27 @@
         }));
 
         textAnimate().start();
+
+    })();
+
+    (function(){
+        var textAnimate_new = eval(Jscex.compile("async", function () {
+		    var together = new Date();
+		    together.setFullYear(2022,1,22); 			//时间年月日，月份从0开始
+		    together.setHours(20);						//小时	
+		    together.setMinutes(0);					//分钟
+		    together.setSeconds(0);					//秒前一位
+		    together.setMilliseconds(0);				//秒第二位
+
+		    $("#code").show().typewriter();
+            $("#clock-box-new").fadeIn(500);
+            while (true) {
+                timeElapse_new(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+
+        textAnimate_new().start();
 
     })();
 </script>
